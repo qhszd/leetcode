@@ -23,48 +23,83 @@ Note:
 #define true    1
 #define false   0
 
-int cmprFunc(const void*, const void*);
-
 bool CheckPermutation(char* s1, char* s2)
 {
     int length1 = strlen(s1);
     int length2 = strlen(s2);
+    // printf("%s\n%s\n", s1, s2);
     if ( length1 != length2 )
     {
         return false;
     }
-    // for ( int i = 0; i < length1; ++i )
-    // {
 
-    // }
-    qsort(s1, length1, sizeof(char), cmprFunc);
+    int* digital1 = (int*)malloc(sizeof(int) * length1);
+    int* digital2 = (int*)malloc(sizeof(int) * length2);
 
     for ( int i = 0; i < length1; ++i )
     {
-        if (s1[i] != s2[i])
+        digital1[i] = (int)s1[i];
+        digital2[i] = (int)s2[i];
+    }
+
+    // printf("%s\n", "CHECKPOINT!");
+    for ( int i = 0; i < length1; ++i )
+    {
+        for ( int j = 0; j < length1 - 1; ++j )
         {
+            if ( digital1[j] > digital1[j + 1] )
+            {
+                int temp = digital1[j];
+                digital1[j] = digital1[j + 1];
+                digital1[j + 1] = temp;
+            }
+        }
+    }
+    // printf("%s\n", "CHECKPOINT!");
+    for ( int i = 0; i < length2; ++i )
+    {
+        for ( int j = 0; j < length2 - 1; ++j )
+        {
+            if ( digital2[j] > digital2[j + 1] )
+            {
+                int temp = digital2[j];
+                digital2[j] = digital2[j + 1];
+                digital2[j + 1] = temp;
+            }
+        }
+    }
+
+    // for ( int i = 0; i < length1; ++i )
+    // {
+    //     printf("%d %d\n", digital1[i], digital2[i]);
+    // }
+    // printf("%s\n", "CHECKPOINT!");
+
+    for ( int i = 0; i < length1; ++i )
+    {
+        if (digital1[i] != digital2[i])
+        {
+            free(digital1);
+            free(digital2);
             return false;
         }
     }
+    free(digital1);
+    free(digital2);
     return true;
 }
 
-int cmprFunc(const void* a, const void* b)
-{
-    return ( *(int*)a - *(int*)b );
-}
-
-int main(void)
-{
-    char* s1 = (char*)malloc(sizeof(char) * 5);
-    char* s2 = (char*)malloc(sizeof(char) * 5);
-    s1 = "abcd\0";
-    s2 = "dcba\0";
-    if ( CheckPermutation(s1, s2) )
-    {
-        printf("%s\n", "true");
-    } else {
-        printf("%s\n", "false");
-    }
-    return 0;
-}
+// int main(int argc, char* argv)
+// {
+//     char* s1 = (char*)malloc(sizeof(char) * 4);
+//     char* s2 = (char*)malloc(sizeof(char) * 4);
+//     s1 = "cant";
+//     s2 = "tanc";
+//     if ( CheckPermutation(s1, s2) )
+//     {
+//         printf("%s\n", "true");
+//     } else {
+//         printf("%s\n", "false");
+//     }
+//     return 0;
+// }
