@@ -12,7 +12,8 @@
 输出: [1,4]
 
 提示：
-nums.length <= 30000 */
+nums.length <= 30000
+*/
 
 /**
  * Note: The returned array must be malloced, assume caller calls free().

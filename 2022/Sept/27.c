@@ -13,7 +13,8 @@ Output: false
 Note:
 
 0 <= len(s1) <= 100
-0 <= len(s2) <= 100 */
+0 <= len(s2) <= 100
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
