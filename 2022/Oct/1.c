@@ -1,4 +1,5 @@
 /* Discription
+1694. Reformat Phone Number
 You would like to reformat the phone number in a certain manner.
 Firstly, remove all spaces and dashes.
 Then, group the digits from left to right into blocks of length 3 until there are 4 or fewer digits.
@@ -93,7 +94,7 @@ char* reformatNumber(char* number)
                 buffer[index++] = number[i];
             }
         }
-        puts("CHECKPOINT! 1#");
+        // puts("CHECKPOINT! 1#");
     } else if ( lenNum % 3 == 2 ) {
         for ( int i = 0; i < lenStr; ++i )
         {
@@ -107,7 +108,7 @@ char* reformatNumber(char* number)
                 buffer[index++] = number[i];
             }
         }
-        puts("CHECKPOINT! 2#");
+        // puts("CHECKPOINT! 2#");
     } else {
         int i, j = 0;
         for ( i = 0; i < lenStr; ++i )
@@ -144,7 +145,7 @@ char* reformatNumber(char* number)
                 buffer[index + j++] = number[i];
             }
         }
-        puts("CHECKPOINT! 3#");
+        // puts("CHECKPOINT! 3#");
     }
     char* result = (char*)malloc(sizeof(char) * (strlen(buffer) + 1));
     sprintf(result, "%s", buffer);
