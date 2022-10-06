@@ -1,4 +1,4 @@
-/* Discription
+/* Description
 面试题 01.02. Check Permutation LCCI
 Given two strings,write a method to decide if one is a permutation of the other.
 

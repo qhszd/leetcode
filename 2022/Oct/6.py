@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-# Discription
+# Description
 # 927. Three Equal Parts
 
 

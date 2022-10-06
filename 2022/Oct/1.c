@@ -1,4 +1,4 @@
-/* Discription
+/* Description
 1694. Reformat Phone Number
 You would like to reformat the phone number in a certain manner.
 Firstly, remove all spaces and dashes.

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Discription
+# Description
 # 811. Subdomain Visit Count
 
 # A website domain "discuss.leetcode.com" consists of various subdomains.
