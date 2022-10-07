@@ -29,9 +29,6 @@
 # 1 <= nums.length <= 100
 # 1 <= nums[i] <= 100
 
-from email.errors import NoBoundaryInMultipartDefect
-
-
 class Solution:
     def maxAscendingSum(self, nums: list[int]) -> int:
         maxmum = 0
