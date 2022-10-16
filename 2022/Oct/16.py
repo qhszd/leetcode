@@ -104,6 +104,7 @@ if __name__ == '__main__':
         print('false')
 
 # Preferable solution
+
 # class Solution:
 #     def possibleBipartition(self, n: int, dislikes: List[List[int]]) -> bool:
 #         g = [[] for _ in range(n)]
